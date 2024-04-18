@@ -21,5 +21,9 @@ docker restart *你命名的名稱*
 docker exec CONTAINER_NAME sh -c "mysqldump -uroot -p DB_NAME" > db.dump
   備份資料庫    檔案會儲存到HOST的硬碟上，而不是容器內的硬碟上
 
+docker exec nginx-mysql-1 sh -c "mysqldump -uroot -proot mydatabase" > db.dump
+
+
+
 docker exec -i CONTAINER_NAME sh -c "mysql -uroot -p DB_NAME" < db.dump
   還原資料庫
