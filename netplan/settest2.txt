@@ -1,0 +1,17 @@
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  ethernets:
+    ens224:
+      dhcp4: true
+    ens33:
+      addresses: [172.20.10.3/24]
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
+      dhcp4: no
+      routes:
+        - to: 0.0.0.0/0
+          via: 172.20.10.1
+  renderer: NetworkManager
+
+

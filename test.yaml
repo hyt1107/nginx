@@ -4,12 +4,10 @@ services:
   nginx:
     image: nginx:latest
     ports:
-      - "8080:80"
+      - "8080:80"  # 將主機端口從 80 改為 8080
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./html:/usr/share/nginx/html
-    networks:
-      - mynetwork
 
   mysql:
     image: mysql:latest
@@ -19,22 +17,14 @@ services:
       MYSQL_DATABASE: mydatabase
       MYSQL_USER: myuser
       MYSQL_PASSWORD: root
-    networks:
-      - mynetwork
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     links:
       - mysql
     ports:
-      - "8081:80"
+      - "8081:80"  # 將主機端口從 8080 改為 8081
     environment:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: root
-    networks:
-      - mynetwork
-
-networks:
-  mynetwork:
-    driver: bridge
 
