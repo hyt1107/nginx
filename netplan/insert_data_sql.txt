@@ -1,0 +1,18 @@
+INSERT INTO `sensor` (`s_no`,`s_name`,`SR_limit`)VALUES
+(1, 'IFM_VSA004', 'Holdwell_000'),
+(2, 'PEE1', 'PEE1_000'),
+(3, 'CME0', ''),
+(4, 'CEJ0', '');
+
+INSERT INTO `type` (`t_no`,`t_name`)VALUES
+(1, '出力軸軸承'),
+(2, '中座齒輪'),
+(3, '下座齒輪');
+
+INSERT INTO `product` (`p_category`,`p_series01`,`p_series02`,`p_series03`,`p_name`,`p_info`)VALUES
+('anglehead', 'AHL', 'BT', 'A1', 'AHL_BT40_A1_65', ''),
+('statictoolholder', 'THL', '', '', 'THL_MNZ_C1_4025', ''),
+('driventoolholder', 'THM', '', '', 'THM_AAA_BB_0000', '');
+
+INSERT INTO `data` VALUES
+('AHL_BT40_A1_65', 'AB64204688', '2024-04-16 9:15:30', '14.457', '0.05', '0.206', '6.367', '92.042', '-75.933', '14.457');

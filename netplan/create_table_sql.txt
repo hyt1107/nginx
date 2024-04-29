@@ -1,0 +1,36 @@
+CREATE TABLE `sensor` (
+  `s_no` INT NOT NULL,
+  `s_name` VARCHAR(255) NOT NULL,
+  `SR_limit` VARCHAR(255),
+  PRIMARY KEY (`s_no`)
+);
+
+CREATE TABLE `type` (
+  `t_no` INT NOT NULL,
+  `t_name` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`t_no`)
+);
+
+CREATE TABLE `product` (
+  `p_category` VARCHAR(255),
+  `p_series01` VARCHAR(255),
+  `p_series02` VARCHAR(255),
+  `p_series03` VARCHAR(255),
+  `p_name` VARCHAR(255) NOT NULL,
+  `p_info` TEXT,
+  PRIMARY KEY (`p_name`)
+);
+
+CREATE TABLE `data` (
+  `p_name` VARCHAR(255) NOT NULL,
+  `serial_number` VARCHAR(255),
+  `timestamp` DATETIME,
+  `value1` DECIMAL(10,3),
+  `value2` DECIMAL(10,3),
+  `value3` DECIMAL(10,3),
+  `value4` DECIMAL(10,3),
+  `value5` DECIMAL(10,3),
+  `value6` DECIMAL(10,3),
+  `value7` DECIMAL(10,3),
+  PRIMARY KEY (`p_name`)
+);
